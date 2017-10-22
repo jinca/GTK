@@ -1,7 +1,6 @@
 #include<gtk/gtk.h>
 
 static void button_clicked(GtkWidget* widget, gpointer data)
-
 {
 
        g_print("Welcome to APISTRAT ");
