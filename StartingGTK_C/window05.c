@@ -10,31 +10,44 @@ int main(int argc, char* argv[])
 
       gtk_init(&argc,&argv);
 
-      GtkWidget *window, *label, *button, *hbox;
+      GtkWidget *window, *label, *button, *box;
 
       window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-      
-      label = gtk_label_new("                            ");
 
-      button = gtk_button_new_with_label("Click me");
+      gtk_window_set_default_size(GTK_WINDOW(window),250,180);
 
-      hbox = gtk_box_new(0,0);
-
-      
-      gtk_window_set_default_size(GTK_WINDOW(window),300,300);
+      gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
 
       gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
 
+     
+      box = gtk_box_new(0,0);
+
+      fixed = gtk_fixed_new(void);
+
+      label = gtk_label_new("                            ");
+
+      gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
+
+
+      button = gtk_button_new_with_label("Click me");
+
+
+      gtk_container_add(GTK_CONTAINER(button), fixed);
+    
+      fixed.put(button, 40,60);
+
+      gtk_box_pack_start(GTK_BOX(box),label,0,0,0);
+     
+      gtk_box_pack_start(GTK_BOX(box),button,1,1,0);
+     
       g_signal_connect(window,"delete_event",G_CALLBACK(gtk_main_quit), NULL);
 
 
       g_signal_connect(button,"clicked",G_CALLBACK(button_clicked), (gpointer)label);
-     
-      gtk_box_pack_start(GTK_BOX(hbox),label,1,1,0);
+    
 
-      gtk_box_pack_start(GTK_BOX(hbox),button,0,0,0);
-
-      gtk_container_add(GTK_CONTAINER(window),hbox);
+      gtk_container_add(GTK_CONTAINER(window), box);
 
       gtk_widget_show_all(window);
 
