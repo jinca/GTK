@@ -3,7 +3,7 @@
 static void button_clicked(GtkWidget* widget, gpointer data)
 {
 
-       g_print("Welcome to APISTRAT ");
+       g_print("Welcome to APISTRAT\n");
 
 }
 
@@ -13,15 +13,13 @@ int main(int argc, char* argv[])
 
       gtk_init(&argc,&argv);
 
-      GtkWidget *window, *label, *button;
+      GtkWidget *window, *button;
 
       button = gtk_button_new_with_label("Click me");
 
       g_signal_connect(button,"clicked",G_CALLBACK(button_clicked), NULL);
 
       window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-      
-      label = gtk_label_new("Welcome to APISTRAT");
 
       gtk_window_set_default_size(GTK_WINDOW(window),300,300);
 
