@@ -23,8 +23,6 @@ int main(int argc, char* argv[])
      
       box = gtk_box_new(0,0);
 
-      fixed = gtk_fixed_new(void);
-
       label = gtk_label_new("                            ");
 
       gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
@@ -32,10 +30,6 @@ int main(int argc, char* argv[])
 
       button = gtk_button_new_with_label("Click me");
 
-
-      gtk_container_add(GTK_CONTAINER(button), fixed);
-    
-      fixed.put(button, 40,60);
 
       gtk_box_pack_start(GTK_BOX(box),label,0,0,0);
      
