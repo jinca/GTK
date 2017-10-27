@@ -19,7 +19,7 @@ int main(int argc, char* argv[])
 
         entry = gtk_entry_new();
        
-        button = gtk_button_new_with_mnemonic("Click me");
+        button =gtk_button_new_with_label("Click me");
    
         g_signal_connect(button,"clicked",G_CALLBACK(button_clicked), entry);
 
