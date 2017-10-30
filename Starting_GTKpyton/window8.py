@@ -12,16 +12,16 @@ window.set_title('Welcome to APISTRAT')
 window.set_border_width(10)
 window.connect('delete-event', Gtk.main_quit)
 
-layout = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
 
-parrot = Gtk.Label('Enter a message and press <ENTER>...')
+label = Gtk.Label('Enter a message and press <ENTER>...')
 
 entry = Gtk.Entry()
-entry.connect('activate', on_entry_activated, parrot)  
+entry.connect('activate', on_entry_activated, label)  
 
-layout.pack_start(entry, True, True, 0)
-layout.pack_start(parrot, True, True, 0)
+box.pack_start(entry, True, True, 0)
+box.pack_start(label, True, True, 0)
 
-window.add(layout)
+window.add(box)
 window.show_all()
 Gtk.main()
