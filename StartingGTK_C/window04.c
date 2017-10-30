@@ -2,15 +2,11 @@
 
 static void button_clicked(GtkWidget* widget, gpointer data)
 {
-
        g_print("Welcome to APISTRAT\n");
-
 }
 
 int main(int argc, char* argv[])
-
 {
-
       gtk_init(&argc,&argv);
 
       GtkWidget *window, *button;
@@ -28,5 +24,4 @@ int main(int argc, char* argv[])
       gtk_widget_show_all(window);
       gtk_main();
       return 0;
-
 }
