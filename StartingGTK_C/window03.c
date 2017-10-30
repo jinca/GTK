@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
       
       label = gtk_label_new("Welcome to APISTRAT");
 
-      gtk_window_set_default_size(GTK_WINDOW(window),300,300);
+      gtk_window_set_default_size(GTK_WINDOW(window),400,600);
 
       gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
 
