@@ -8,7 +8,7 @@ int main(int argc, char* argv[])
 
       window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 
-      gtk_window_set_default_size(GTK_WINDOW(window),300,300);
+      gtk_window_set_default_size(GTK_WINDOW(window),400,600);
       gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
       g_signal_connect(window,"delete_event",G_CALLBACK(gtk_main_quit), NULL);
 
