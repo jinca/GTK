@@ -4,7 +4,7 @@ from gi.repository import Gtk
 
 window = Gtk.Window()
 
-window.set_title("Welcome to APISTRAT")
+window.set_title("Linux Foundation")
 window.set_default_size(400,600)
 
 window.connect("destroy",Gtk.main_quit)
