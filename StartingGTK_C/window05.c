@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
      
       box = gtk_box_new(0,0);
 
-      label = gtk_label_new("                            ");
+      label = gtk_label_new();
 
       gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
 
