@@ -1,39 +1,54 @@
 #include<gtk/gtk.h>
 
-static void button_clicked(GtkWidget *widget, gpointer data)
+static void button_clicked(GtkWidget* widget, gpointer data)
 {
-    g_print("%s\n",gtk_entry_get_text(GTK_ENTRY(data)));
+      gtk_label_set_text(GTK_LABEL(data),"  Welcome to APISTRAT  ");
 }
 
 int main(int argc, char* argv[])
 {
-        gtk_init(&argc,&argv);
 
-        GtkWidget *window,*entry,*button,*box;
+      gtk_init(&argc,&argv);
 
-        window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
-       
-        gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
+      GtkWidget *window, *label, *button, *grid;
 
-        g_signal_connect(window,"delete_event",G_CALLBACK(gtk_main_quit),NULL);
+      window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
 
-        entry = gtk_entry_new();
-       
-        button =gtk_button_new_with_label("Click me");
-   
-        g_signal_connect(button,"clicked",G_CALLBACK(button_clicked), entry);
+      gtk_window_set_default_size(GTK_WINDOW(window),250,180);
 
-        box = gtk_box_new(0,0);
+      gtk_window_set_position(GTK_WINDOW(window), GTK_WIN_POS_CENTER);
 
-        gtk_box_pack_start(GTK_BOX(box),entry,0,0,0);
+      gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
 
-        gtk_box_pack_start(GTK_BOX(box),button,1,1,0);
+      
+      grid = gtk_grid_new();
 
-        gtk_container_add(GTK_CONTAINER(window),box);
+      
+      label = gtk_label_new("                                        ");
 
-        gtk_widget_show_all(window);
+      gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
 
-        gtk_main();
 
-        return 0;
+      button = gtk_button_new_with_label("Click me");
+
+
+      gtk_grid_attach(GTK_GRID(grid), label,0,0,1,1);
+    
+      gtk_grid_attach(GTK_GRID(grid), button,3,0,1,1);
+     
+      
+      g_signal_connect(window,"delete_event",G_CALLBACK(gtk_main_quit), NULL);
+
+
+      g_signal_connect(button,"clicked",G_CALLBACK(button_clicked), (gpointer)label);
+     
+
+      gtk_container_add(GTK_CONTAINER(window), grid);
+
+      gtk_widget_show_all(window);
+
+      gtk_main();
+
+      return 0;
+
 }
