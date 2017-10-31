@@ -11,15 +11,14 @@ int main(int argc, char* argv[])
       window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
       gtk_window_set_default_size(GTK_WINDOW(window),400,600);
       gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
-
-      box = gtk_box_new(GTK_ORIENTATION_VERTICAL,6);
+      g_signal_connect(window,"delete_event",G_CALLBACK(gtk_main_quit), NULL);
+      
       label = gtk_label_new("");
-      gtk_window_set_title(GTK_WINDOW(window),"Linux Foundation");
-
       button = gtk_button_new_with_label("Click me");
+      
+      box = gtk_box_new(GTK_ORIENTATION_VERTICAL,6);
       gtk_box_pack_start(GTK_BOX(box),button,TRUE,TRUE,0);
       gtk_box_pack_start(GTK_BOX(box),label,TRUE,TRUE,0);
-      g_signal_connect(window,"delete_event",G_CALLBACK(gtk_main_quit), NULL);
       g_signal_connect(button,"clicked",G_CALLBACK(button_clicked), (gpointer)label);
 
       gtk_container_add(GTK_CONTAINER(window), box);
