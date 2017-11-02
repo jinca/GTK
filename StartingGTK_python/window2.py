@@ -6,6 +6,6 @@ window = Gtk.Window()
 window.set_title("Linux Foundation")
 window.set_default_size(400, 600)
 window.connect("destroy", Gtk.main_quit)
-window.show()
+window.show_all()
 
 Gtk.main()

@@ -5,5 +5,5 @@ from gi.repository import Gtk
 window = Gtk.Window()
 window.connect("destroy", Gtk.main_quit)
 
-window.show()
+window.show_all()
 Gtk.main()
