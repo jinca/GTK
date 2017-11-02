@@ -20,7 +20,7 @@ int main (int argc, char *argv[])
     gtk_widget_set_halign (button, GTK_ALIGN_START);
     gtk_widget_set_valign (button, GTK_ALIGN_START);
 
-    label = gtk_label_new ("");
+    label = gtk_label_new (NULL);
     gtk_widget_set_halign (label, GTK_ALIGN_END);
     gtk_widget_set_valign (label, GTK_ALIGN_END);
 

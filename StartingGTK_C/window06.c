@@ -15,7 +15,7 @@ int main (int argc, char *argv[])
     gtk_window_set_default_size (GTK_WINDOW (window), 400, 600);
     gtk_window_set_title (GTK_WINDOW (window), "Linux Foundation");
 
-    label = gtk_label_new ("");
+    label = gtk_label_new (NULL);
     button = gtk_button_new_with_label ("Click me");
 
     box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
