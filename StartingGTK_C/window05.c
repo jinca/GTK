@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-static void button_clicked (GtkWidget* widget, gpointer data)
+static void on_button_clicked (GtkWidget* widget, gpointer data)
 {
     g_print ("Welcome to APISTRAT\n");
 }
@@ -21,7 +21,7 @@ int main (int argc, char *argv[])
     gtk_container_add (GTK_CONTAINER (window), button);
 
     g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
-    g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), NULL);
+    g_signal_connect (button, "clicked", G_CALLBACK (on_button_clicked), NULL);
 
     gtk_widget_show_all (window);
     gtk_main ();

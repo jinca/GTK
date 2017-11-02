@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-static void button_clicked (GtkWidget *widget, gpointer data)
+static void on_button_clicked (GtkWidget *widget, gpointer data)
 {
     g_print ("%s\n", gtk_entry_get_text (GTK_ENTRY (data)));
 }
@@ -25,7 +25,7 @@ int main (int argc, char *argv[])
     gtk_container_add (GTK_CONTAINER (window), box);
 
     g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
-    g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), entry);
+    g_signal_connect (button, "clicked", G_CALLBACK (on_button_clicked), entry);
 
     gtk_widget_show_all (window);
     gtk_main ();
