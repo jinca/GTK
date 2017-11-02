@@ -23,7 +23,7 @@ int main (int argc, char *argv[])
     gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
     gtk_container_add (GTK_CONTAINER (window), box);
 
-    g_signal_connect (window, "delete_event", G_CALLBACK (gtk_main_quit), NULL);
+    g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
     g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), (gpointer)label);
 
     gtk_widget_show_all (window);
