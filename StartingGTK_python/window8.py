@@ -9,20 +9,26 @@ def on_button_clicked(button, entry):
     text = entry.get_text()
     print(text)
 
-window = Gtk.Window()
-window.set_title('Linux Foundation')
-window.set_border_width(50)
-window.connect('delete-event', Gtk.main_quit)
 
-button = Gtk.Button('Click me')
-entry = Gtk.Entry()
+def main():
+    window = Gtk.Window()
+    window.set_title('Linux Foundation')
+    window.set_border_width(50)
+    window.connect('delete-event', Gtk.main_quit)
 
-button.connect('clicked', on_button_clicked, entry)
+    button = Gtk.Button('Click me')
+    entry = Gtk.Entry()
 
-box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
-box.pack_start(entry, True, True, 0)
-box.pack_start(button, True, True, 0)
+    button.connect('clicked', on_button_clicked, entry)
 
-window.add(box)
-window.show_all()
-Gtk.main()
+    box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+    box.pack_start(entry, True, True, 0)
+    box.pack_start(button, True, True, 0)
+
+    window.add(box)
+    window.show_all()
+    Gtk.main()
+
+
+if __name__ == "__main__":
+    main()

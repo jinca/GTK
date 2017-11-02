@@ -12,16 +12,22 @@ def on_button_clicked(button):
 def on_destroy(window):
     Gtk.main_quit()
 
-window = Gtk.Window()
-window.set_title("Linux Foundation")
-window.set_default_size(400, 600)
-window.connect("destroy", on_destroy)
 
-button = Gtk.Button("Click me")
-button.set_halign(Gtk.Align.CENTER)
-button.set_valign(Gtk.Align.CENTER)
-button.connect("clicked", on_button_clicked)
-window.add(button)
+def main():
+    window = Gtk.Window()
+    window.set_title("Linux Foundation")
+    window.set_default_size(400, 600)
+    window.connect("destroy", on_destroy)
 
-window.show_all()
-Gtk.main()
+    button = Gtk.Button("Click me")
+    button.set_halign(Gtk.Align.CENTER)
+    button.set_valign(Gtk.Align.CENTER)
+    button.connect("clicked", on_button_clicked)
+    window.add(button)
+
+    window.show_all()
+    Gtk.main()
+
+
+if __name__ == "__main__":
+    main()

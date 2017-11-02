@@ -10,21 +10,27 @@ def on_entry_activated(entry, label):
     label.set_text(text)
     entry.set_text('')
 
-window = Gtk.Window()
-window.set_title('Linux Foundation')
-window.set_border_width(50)
-window.connect('delete-event', Gtk.main_quit)
 
-box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
+def main():
+    window = Gtk.Window()
+    window.set_title('Linux Foundation')
+    window.set_border_width(50)
+    window.connect('delete-event', Gtk.main_quit)
 
-label = Gtk.Label('Enter a message and press <ENTER>...')
+    box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
 
-entry = Gtk.Entry()
-entry.connect('activate', on_entry_activated, label)
+    label = Gtk.Label('Enter a message and press <ENTER>...')
 
-box.pack_start(entry, True, True, 0)
-box.pack_start(label, True, True, 0)
+    entry = Gtk.Entry()
+    entry.connect('activate', on_entry_activated, label)
 
-window.add(box)
-window.show_all()
-Gtk.main()
+    box.pack_start(entry, True, True, 0)
+    box.pack_start(label, True, True, 0)
+
+    window.add(box)
+    window.show_all()
+    Gtk.main()
+
+
+if __name__ == "__main__":
+    main()
