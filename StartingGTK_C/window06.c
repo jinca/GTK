@@ -24,7 +24,7 @@ int main (int argc, char *argv[])
     gtk_container_add (GTK_CONTAINER (window), box);
 
     g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
-    g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), (gpointer)label);
+    g_signal_connect (button, "clicked", G_CALLBACK (button_clicked), label);
 
     gtk_widget_show_all (window);
     gtk_main ();
