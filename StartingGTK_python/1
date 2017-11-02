@@ -6,7 +6,7 @@ window = Gtk.Window()
 
 window.set_title("Welcome to APISTRAT")
 
-window.connect("destroy",Gtk.main_quit)
+window.connect("destroy", Gtk.main_quit)
 
 window.show()
 

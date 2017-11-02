@@ -2,9 +2,10 @@ import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
 
-def on_button_clicked(button,entry):
-    text = entry.get_text()  
-    print(text)  
+
+def on_button_clicked(button, entry):
+    text = entry.get_text()
+    print(text)
 
 window = Gtk.Window()
 window.set_title('Linux Foundation')
@@ -14,7 +15,7 @@ window.connect('delete-event', Gtk.main_quit)
 button = Gtk.Button('Click me')
 entry = Gtk.Entry()
 
-button.connect('clicked', on_button_clicked, entry)  
+button.connect('clicked', on_button_clicked, entry)
 
 box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=0)
 box.pack_start(entry, True, True, 0)
