@@ -1,10 +1,10 @@
 To install on Fedora:
 
-$sudo apt-get install libgtk-3-dev
+`sudo apt-get install libgtk-3-dev`
 
 To install on Ubuntu:
 
-sudo apt-get install build-essential libgtk-3-dev
+`sudo apt-get install build-essential libgtk-3-dev`
 
 To compile:
  
