@@ -18,13 +18,14 @@ int main (int argc, char* argv[])
     label = gtk_label_new (NULL);
     button = gtk_button_new_with_label ("Click me");
       
-    box = gtk_box_new (GTK_ORIENTATION_VERTICAL,6);
+    box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
     gtk_box_pack_start (GTK_BOX (box), button, TRUE, TRUE, 0);
     gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
     gtk_container_add (GTK_CONTAINER (window), box);
 
     g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
     g_signal_connect (button, "clicked", G_CALLBACK (on_button_clicked), label);
+
     gtk_widget_show_all (window);
     gtk_main ();
     return 0;
