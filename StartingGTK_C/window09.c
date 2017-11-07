@@ -18,7 +18,7 @@ int main (int argc, char *argv[])
 
     entry = gtk_entry_new ();
     gtk_entry_set_activates_default (GTK_ENTRY(entry), TRUE);
-    label = gtk_label_new ("Enter a message and press <ENTER>...");
+    label = gtk_label_new ("Enter a message and press <ENTER> ...");
 
     box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
     gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
