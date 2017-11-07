@@ -2,7 +2,7 @@
 
 static void on_button_clicked (GtkWidget* widget, gpointer data)
 {
-    g_print ("Welcome to APISTRAT\n");
+    g_print ("Welcome to APISTRAT \n");
 }
 
 int main (int argc, char *argv[])
