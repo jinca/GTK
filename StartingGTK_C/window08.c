@@ -7,9 +7,9 @@ static void on_button_clicked (GtkWidget *widget, gpointer data)
 
 int main (int argc, char *argv[])
 {
-    GtkWidget *window,*entry,*button,*box;
+    GtkWidget *window, *entry, *button, *box;
 
-    gtk_init (&argc,&argv);
+    gtk_init (&argc, &argv);
 
     window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
     gtk_window_set_default_size (GTK_WINDOW (window), 300, 200);
