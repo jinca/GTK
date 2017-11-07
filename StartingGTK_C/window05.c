@@ -9,11 +9,11 @@ int main (int argc, char *argv[])
 {
     GtkWidget *window, *button;
 
-    gtk_init (&argc,&argv);
+    gtk_init (&argc, &argv);
 
     window = gtk_window_new (GTK_WINDOW_TOPLEVEL);
     gtk_window_set_default_size (GTK_WINDOW (window), 300, 300);
-    gtk_window_set_title (GTK_WINDOW (window),"Linux Foundation");
+    gtk_window_set_title (GTK_WINDOW (window), "Linux Foundation");
 
     button = gtk_button_new_with_label ("Click me");
     gtk_widget_set_halign (button, GTK_ALIGN_CENTER);
@@ -22,6 +22,7 @@ int main (int argc, char *argv[])
 
     g_signal_connect (window, "detroy", G_CALLBACK (gtk_main_quit), NULL);
     g_signal_connect (button, "clicked", G_CALLBACK (on_button_clicked), NULL);
+
     gtk_widget_show_all (window);
     gtk_main ();
     return 0;
