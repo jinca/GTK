@@ -20,7 +20,7 @@ int main (int argc, char *argv[])
     gtk_widget_set_valign (button, GTK_ALIGN_CENTER);
     gtk_container_add (GTK_CONTAINER (window), button);
 
-    g_signal_connect (window, "detroy", G_CALLBACK (gtk_main_quit), NULL);
+    g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
     g_signal_connect (button, "clicked", G_CALLBACK (on_button_clicked), NULL);
 
     gtk_widget_show_all (window);
