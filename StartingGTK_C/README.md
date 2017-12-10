@@ -2,6 +2,10 @@ To install on Fedora:
 
 `sudo dnf install libgtk-3-dev`
 
+In case more dependences are needed
+
+sudo dnf install gtk3-devel gstreamer-devel clutter-devel libgda-devel gobject-introspection-devel
+
 In case you have not installed any development tool
 
 sudo dnf install @c-development @development-tools gnome-common pygobject2 dbus-python redhat-rpm-config perl-Text-CSV
