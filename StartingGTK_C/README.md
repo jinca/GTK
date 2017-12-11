@@ -18,6 +18,10 @@ To compile:
  
 `gcc $(pkg-config --cflags gtk+-3.0) -o window window.c $(pkg-config --libs gtk+-3.0)`
 
+To compile with WebKit
+
+`gcc $(pkg-config --cflags gtk+-3.0) $(pkg-config --cflags webkitgtk-3.0) -o grid01 grid01.c $(pkg-config --libs gtk+-3.0) $(pkg-config --libs webkitgtk-3.0)`
+
 To run:
 
 `./window`

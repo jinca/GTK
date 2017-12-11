@@ -1,14 +1,32 @@
 #include <gtk/gtk.h>
+#include <webkit/webkit.h>
 
 void Open_Resource (GtkWidget *widget, gpointer *data)
 {
     gboolean state;
+
+    WebKitWebView *webView = WEBKIT_WEB_VIEW(webkit_web_view_new());
+    
     state = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON(data));
     if (state)
     {
+        GtkWidget *web_window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+	WebKitWebView *webView = WEBKIT_WEB_VIEW(webkit_web_view_new());
+
+	gtk_container_add(GTK_CONTAINER(web_window), GTK_WIDGET(webView));
+
+	g_signal_connect(web_window, "destroy", G_CALLBACK(gtk_main_quit), NULL);
+
+	g_signal_connect(webView, "close", G_CALLBACK(gtk_main_quit), web_window);
+
 	const gchar *name = gtk_button_get_label (GTK_BUTTON(data));
 
-        g_print("%s\n",name);
+	if (g_strcmp0(name,"Java")==0)
+	{
+	   webkit_web_view_load_uri(webView, "http://www.webkitgtk.org/");
+           gtk_widget_show_all(web_window);
+	}
+
     }
 }
 
