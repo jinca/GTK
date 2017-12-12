@@ -14,7 +14,7 @@ def main():
     window = Gtk.Window()
     window.set_title('Linux Foundation')
     window.set_border_width(50)
-    window.connect('delete-event', Gtk.main_quit)
+    window.connect('destroy', Gtk.main_quit)
 
     button = Gtk.Button('Click me')
     entry = Gtk.Entry()
