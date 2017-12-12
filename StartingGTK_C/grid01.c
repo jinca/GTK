@@ -3,7 +3,7 @@
 int main (int argc, char *argv[])
 {
     GtkWidget *win, *grid, *b1, *b2, *cb1, *cb2, *cb3, *cb4;
-    
+
     gtk_init (&argc, &argv);
     win = gtk_window_new(GTK_WINDOW_TOPLEVEL);
     gtk_window_set_title (GTK_WINDOW (win), "Language Selector");
@@ -11,7 +11,7 @@ int main (int argc, char *argv[])
     gtk_container_set_border_width (GTK_CONTAINER (win), 10);
 
     grid = gtk_grid_new ();
-    
+
     b1 = gtk_button_new_with_label ("Quit");
     g_signal_connect (b1, "clicked", G_CALLBACK (gtk_main_quit), NULL);
 
@@ -33,7 +33,7 @@ int main (int argc, char *argv[])
 
     g_signal_connect (win, "destroy", G_CALLBACK (gtk_main_quit), NULL);
     gtk_widget_show_all(win);
-    
+
     gtk_main();
     return 0;
 }

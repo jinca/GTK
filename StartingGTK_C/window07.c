@@ -1,8 +1,9 @@
 #include <gtk/gtk.h>
 
-static void on_button_clicked (GtkWidget* widget, gpointer data)
+static void on_button_clicked (GtkButton *button, gpointer user_data)
 {
-    gtk_label_set_text (GTK_LABEL (data), "Welcome to APISTRAT");
+    GtkWidget *label = user_data;
+    gtk_label_set_text (GTK_LABEL (label), "Welcome to APISTRAT");
 }
 
 int main (int argc, char* argv[])
@@ -15,11 +16,11 @@ int main (int argc, char* argv[])
     gtk_window_set_default_size (GTK_WINDOW (window), 300, 200);
     gtk_window_set_title (GTK_WINDOW (window), "Linux Foundation");
     gtk_container_set_border_width (GTK_CONTAINER (window), 50);
-      
+
     button = gtk_button_new_with_label ("Click me");
     gtk_widget_set_halign (button, GTK_ALIGN_START);
     gtk_widget_set_valign (button, GTK_ALIGN_START);
-      
+
     label = gtk_label_new (NULL);
     gtk_widget_set_halign (label, GTK_ALIGN_END);
     gtk_widget_set_valign (label, GTK_ALIGN_END);
@@ -28,7 +29,7 @@ int main (int argc, char* argv[])
     gtk_box_pack_start (GTK_BOX (box), button, TRUE, TRUE, 0);
     gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);
     gtk_container_add (GTK_CONTAINER (window), box);
-      
+
     g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
     g_signal_connect (button, "clicked", G_CALLBACK (on_button_clicked), label);
 
