@@ -1,6 +1,6 @@
 #include <gtk/gtk.h>
 
-static void on_button_clicked (GtkWidget* widget, gpointer data)
+static void on_button_clicked (GtkButton *button, gpointer user_data)
 {
     g_print ("Welcome to APISTRAT \n");
 }

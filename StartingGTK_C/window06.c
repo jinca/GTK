@@ -1,8 +1,9 @@
 #include <gtk/gtk.h>
 
-static void on_button_clicked (GtkWidget* widget, gpointer data)
+static void on_button_clicked (GtkButton *button, gpointer user_data)
 {
-    gtk_label_set_text (GTK_LABEL (data), "Welcome to APISTRAT");
+    GtkWidget *label = user_data;
+    gtk_label_set_text (GTK_LABEL (label), "Welcome to APISTRAT");
 }
 
 int main (int argc, char* argv[])
@@ -17,7 +18,7 @@ int main (int argc, char* argv[])
 
     label = gtk_label_new (NULL);
     button = gtk_button_new_with_label ("Click me");
-      
+
     box = gtk_box_new (GTK_ORIENTATION_VERTICAL, 6);
     gtk_box_pack_start (GTK_BOX (box), button, TRUE, TRUE, 0);
     gtk_box_pack_start (GTK_BOX (box), label, TRUE, TRUE, 0);

@@ -1,7 +1,8 @@
 #include <gtk/gtk.h>
 
-static void on_entry_activate (GtkEntry *entry, GtkLabel *label)
+static void on_entry_activate (GtkEntry *entry, gpointer user_data)
 {
+    GtkLabel *label = user_data;
     gtk_label_set_text (GTK_LABEL (label), gtk_entry_get_text (GTK_ENTRY (entry)));
 }
 
